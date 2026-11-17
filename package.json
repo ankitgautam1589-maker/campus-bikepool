@@ -1,0 +1,24 @@
+{
+  "name": "campus-bikepool",
+  "version": "1.0.0",
+  "description": "Full-stack university two-wheeler bikepooling platform",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "seed": "cd backend && node -e \"require('dotenv').config(); require('./config/db')().then(() => require('./seed')()).then(() => process.exit(0));\""
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "carpooling",
+    "bikepooling",
+    "tailwind"
+  ],
+  "author": "Campus Bikepool Team",
+  "license": "MIT"
+}
