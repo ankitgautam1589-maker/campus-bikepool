@@ -14,6 +14,24 @@ const seedDemoData = async () => {
     console.log('[Seed] Seeding initial campus students and bike rides...');
 
     // 1. Create Verified Demo Students
+    const user0 = await User.create({
+      name: 'Ankit Gautam',
+      email: 'k26078@student.cpur.edu.in',
+      studentId: 'k26078',
+      password: 'password123',
+      department: 'Computer Science',
+      phoneNumber: '+919876543210',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=250&q=80',
+      isVerifiedStudent: true,
+      rating: { average: 5.0, count: 12 },
+      bikeDetails: {
+        hasBike: true,
+        model: 'Royal Enfield Classic 350',
+        plateNumber: 'RJ-14-BK-2026',
+        hasPillionHelmet: true,
+      },
+    });
+
     const user1 = await User.create({
       name: 'Alex Morgan',
       email: 'alex.morgan@university.edu',

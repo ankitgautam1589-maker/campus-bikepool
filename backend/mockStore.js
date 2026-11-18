@@ -4,6 +4,25 @@ const jwt = require('jsonwebtoken');
 // Pre-seeded verified campus students
 const users = [
   {
+    _id: '66461a1b8f1d2c001a000000',
+    id: '66461a1b8f1d2c001a000000',
+    name: 'Ankit Gautam',
+    email: 'k26078@student.cpur.edu.in',
+    studentId: 'k26078',
+    passwordHash: bcrypt.hashSync('password123', 10),
+    department: 'Computer Science',
+    phoneNumber: '+919876543210',
+    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=250&q=80',
+    isVerifiedStudent: true,
+    rating: { average: 5.0, count: 12 },
+    bikeDetails: {
+      hasBike: true,
+      model: 'Royal Enfield Classic 350',
+      plateNumber: 'RJ-14-BK-2026',
+      hasPillionHelmet: true,
+    },
+  },
+  {
     _id: '66461a1b8f1d2c001a111111',
     id: '66461a1b8f1d2c001a111111',
     name: 'Alex Morgan',

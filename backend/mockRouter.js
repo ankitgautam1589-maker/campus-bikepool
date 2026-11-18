@@ -47,12 +47,18 @@ router.post('/auth/login', (req, res) => {
   const { email, password } = req.body;
   const user = users.find((u) => u.email.toLowerCase() === email?.toLowerCase());
   if (!user) {
-    return res.status(401).json({ success: false, message: 'Invalid student credentials.' });
+    return res.status(401).json({
+      success: false,
+      message: 'Account not found for this email. Please click the "Create Account" tab to register first.',
+    });
   }
 
   const valid = bcrypt.compareSync(password, user.passwordHash);
   if (!valid) {
-    return res.status(401).json({ success: false, message: 'Invalid student credentials.' });
+    return res.status(401).json({
+      success: false,
+      message: 'Incorrect password. Please verify your password and try again.',
+    });
   }
 
   const token = generateToken(user._id);

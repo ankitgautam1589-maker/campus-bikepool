@@ -97,7 +97,7 @@ const loginUser = async (req, res, next) => {
     if (!user) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid credentials. Please verify your email and password.',
+        message: 'Account not found for this email. Please click "Create Account" tab to register first.',
       });
     }
 
@@ -105,7 +105,7 @@ const loginUser = async (req, res, next) => {
     if (!isMatch) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid credentials. Please verify your email and password.',
+        message: 'Incorrect password. Please verify your password and try again.',
       });
     }
 
